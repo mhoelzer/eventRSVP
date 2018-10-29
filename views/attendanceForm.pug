@@ -7,22 +7,31 @@ html
   body
     h1 Hello! 
 
-    form(method="post" enctype="application/x-www-form-urlencoded" action="/reply")
+    form(method="POST" action="/reply")
       fieldset 
         legend Can You Make It?
         h3 Name: 
-          input#name(placeholder="Name")
+          input(placeholder="Name" id="name" type="text" name="name")
         h3 Email: 
-          input#email(placeholder="Email")
+          input(placeholder="Email" id="email" type="text" name="email")
         h3 Attending? 
           br
-          input.radio#can(type="radio" value="can" name="rsvpStatus")
-          label(for="can") I can make it!
+          input(type="radio" id="attending" value="1" name="attending")
+          label(for="attending") I can make it!
           br
-          input.radio#cannot(type="radio" value="cannot" name="rsvpStatus") 
-          label(for="cannot") I can't make it :(
+          input(type="radio" id="notAttending" value="0" name="attending") 
+          label(for="notAttending") I can't make it :(
         h3 Number of Guests: 
-          input#guests(type="number" min="0" max="20" placeholder="0")
+          select(name="guests" id="guests")
+            option(value="0") 
+            option(value="1") 1
+            option(value="2") 2
+            option(value="3") 3
+            option(value="4") 4
+            option(value="5") 5
+            option(value="6") 6
+            option(value="7") 7
+            option(value="8") 8
 
         div#buttonContainer
           button(type="submit") Submit
