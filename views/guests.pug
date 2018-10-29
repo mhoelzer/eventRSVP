@@ -8,12 +8,19 @@ html
     h1 Guest List: 
 
     div#list
-      div Attendees
-      each guest in attending
-        span= `${guest.name}`
-          span= `Guests, ${guest.guests}`
-      div Losers
-      each guest in notAttending
-        span= `${guest.name}`
+      div 
+        h3 Attendees:
+        each attendee in attending
+          li= `${attendee.name} and ${attendee.guests} Guest(s)`
+            //- div= `${attendee.name}'s Guests, ${attendee.guests}`
+          div ~~~
+      br
+      div 
+        h3 Losers:
+        each attendee in notAttending
+          li= `${attendee.name}`
+          div ~~~
 
+    br
+    br
     a(href="/") Go Back to the Form

@@ -11,18 +11,18 @@ html
       fieldset 
         legend Can You Make It?
         h3 Name: 
-          input(placeholder="Name" id="name" type="text" name="name")
+          input#name(placeholder="Name" type="text" name="name")
         h3 Email: 
-          input(placeholder="Email" id="email" type="text" name="email")
+          input#email(placeholder="Email" type="text" name="email")
         h3 Attending? 
           br
-          input(type="radio" id="attending" value="1" name="attending")
+          input#attending(type="radio" value="1" name="attending")
           label(for="attending") I can make it!
           br
-          input(type="radio" id="notAttending" value="0" name="attending") 
+          input#notAttending(type="radio" value="0" name="attending") 
           label(for="notAttending") I can't make it :(
         h3 Number of Guests: 
-          select(name="guests" id="guests")
+          select#guests(name="guests")
             option(value="0") 
             option(value="1") 1
             option(value="2") 2
