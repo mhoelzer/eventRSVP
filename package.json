@@ -10,7 +10,10 @@
   "license": "ISC",
   "dependencies": {
     "express": "^4.16.4",
+    "mongodb": "^3.1.8",
+    "mongoose": "^5.3.7",
     "node": "^11.0.0",
+    "nodemon": "^1.18.5",
     "pug": "^2.0.3"
   }
 }

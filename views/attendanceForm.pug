@@ -1,0 +1,31 @@
+doctype
+html
+  head
+    link(rel="stylesheet" href="style.css")
+    title Form
+
+  body
+    h1 Hello! 
+
+    form(method="post" enctype="application/x-www-form-urlencoded" action="/reply")
+      fieldset 
+        legend Can You Make It?
+        h3 Name: 
+          input#name(placeholder="Name")
+        h3 Email: 
+          input#email(placeholder="Email")
+        h3 Attending? 
+          br
+          input.radio#can(type="radio" value="can" name="rsvpStatus")
+          label(for="can") I can make it!
+          br
+          input.radio#cannot(type="radio" value="cannot" name="rsvpStatus") 
+          label(for="cannot") I can't make it :(
+        h3 Number of Guests: 
+          input#guests(type="number" min="0" max="20" placeholder="0")
+
+        div#buttonContainer
+          button(type="submit") Submit
+          button(type="reset") Reset
+          //- input(type="submit") 
+          //- input(type="reset") 
