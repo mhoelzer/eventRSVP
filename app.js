@@ -5,7 +5,7 @@ const app = express();
 app.set("view engine", "pug");
 
 const publicPath = "public/";
-const port = 3000;
+const PORT = process.env.PORT || 3000; // instead of doing npm start, do PORT=5000 or w/e then add the npm strat 
 app.use(express.static(publicPath));
 app.use(express.urlencoded());
 
@@ -18,7 +18,9 @@ database.once("open", () => {
 const url = "mongodb://localhost:27017";
 const databaseName = "rsvp";
 mongoose.connect(`mongodb://localhost/${databaseName}`);
-
+const DB_USER = "admin1";
+const DB_PASSWORD = "admin1";
+const DB_URI = "ds245523.mlab.com:45523";
 
 let guestSchema = new mongoose.Schema ({
     name: String,
@@ -59,4 +61,7 @@ app.post("/reply", (request, response) => {
     });
 });
 
-app.listen(port, console.log(`Listening on port ${port}!`));
+app.listen(PORT, () => {
+    mongoose.connect(`mongodb://${DB_USER}:${DB_PASSWORD}@${DB_URI}/${databaseName}`)
+    console.log(`Listening on port ${PORT}!`)
+});
